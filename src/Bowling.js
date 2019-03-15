@@ -3,5 +3,5 @@ function Game() {
 }
 
 Game.prototype.roll = function(number) {
-
+  this.score += number;
 }
