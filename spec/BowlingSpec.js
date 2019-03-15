@@ -18,4 +18,27 @@ describe('Bowling', function(){
     game.roll(2)
     expect(game.score).toEqual(2);
   })
+
+  it('score will be 9 after rolling 2, then rolling 7', function() {
+    var game = new Game();
+    game.roll(2);
+    game.roll(7);
+    expect(game.score).toEqual(9);
+  })
+
+  it('is a gutter game', function() {
+    var game = new Game();
+    for (var i = 0; i < 20; i++) {
+      game.roll(0);
+    }
+    expect(game.score).toEqual(0);
+  })
+
+  it('is a perfect game', function() {
+    var game = new Game();
+    for (var i = 0; i < 20; i++) {
+      game.roll(10);
+    }
+    expect(game.score).toEqual(200);
+  })
 });
